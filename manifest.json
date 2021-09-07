@@ -5,6 +5,7 @@
 	"background_color": "cadetblue",
 	"theme_color": "cadetblue",
 	"display": "standalone",
+    "cacheDigest":"efeb35579bd47afa301af76c6b392a12",
 	"icons": [
 		{
 			"src": "sun.png",
