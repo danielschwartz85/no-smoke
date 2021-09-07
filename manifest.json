@@ -8,14 +8,30 @@
     "cacheDigest":"efeb35579bd47afa301af76c6b392a12",
 	"icons": [
 		{
-			"src": "sun.png",
-			"sizes": "256x256",
+			"src": "sunny-512.png",
+			"sizes": "512x512",
 			"type": "image/png"
 		},
         {
-			"src": "sun-512.png",
-			"sizes": "512x512",
+			"src": "sunny-256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "sunny-128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "sunny-64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "sunny-32.png",
+			"sizes": "32x32",
 			"type": "image/png"
 		}
+
 	]
 }
