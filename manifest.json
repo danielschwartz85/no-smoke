@@ -1,7 +1,7 @@
 {
 	"name": "NoSomke",
 	"short_name": "NoSomke",
-	"start_url": "/",
+	"start_url": "/no-smoke/",
 	"background_color": "cadetblue",
 	"theme_color": "cadetblue",
 	"display": "standalone",
