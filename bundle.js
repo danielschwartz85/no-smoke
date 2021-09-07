@@ -10,7 +10,6 @@ function load() {
     currency = '₪',
   } = getOptions();
   const quitDate = new Date(quitAt);
-  console.log('🚀 ~ file: main.js ~ line 11 ~ load ~ const', quitAt);
   const years = moment().diff(quitDate, 'years');
   const months = moment().diff(quitDate, 'months') - (years * 12);
   document.getElementById('title').innerText = `smoke free for ${years} years and ${months} months`;
@@ -30,7 +29,9 @@ function getOptions() {
 
 document.addEventListener('DOMContentLoaded', load);
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('./sw.js');
+  navigator.serviceWorker.register('./sw.js').then(function(registration) {
+    console.log('Service worker registration succeeded:', registration);
+  });
 }
 
 },{"moment":2}],2:[function(require,module,exports){

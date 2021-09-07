@@ -28,5 +28,7 @@ function getOptions() {
 
 document.addEventListener('DOMContentLoaded', load);
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('./sw.js');
+  navigator.serviceWorker.register('./sw.js').then(function(registration) {
+    console.log('Service worker registration succeeded:', registration);
+  });
 }
