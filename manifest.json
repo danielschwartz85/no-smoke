@@ -7,9 +7,9 @@
 	"display": "standalone",
 	"icons": [
 		{
-			"src": "cloud.ico?v=efeb35579bd47afa301af76c6b392a12",
-			"sizes": "128x128",
-			"type": "image/ico"
+			"src": "sun.png",
+			"sizes": "256x256",
+			"type": "image/png"
 		}
 	]
 }
