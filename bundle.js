@@ -1,17 +1,38 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const moment = require('moment')
+const moment = require('moment');
 
 function load() {
-    const quitDate = new Date('2018-04-13T11:00:00.000Z')
-    const years = moment().diff(quitDate, 'years')
-    const months = moment().diff(quitDate, 'months') - (years * 12)
-    document.getElementById('title').innerText = `smoke free for ${years} years and ${months} months`
-    console.log(moment().diff(quitDate, 'days'))
-    const nis = parseInt(moment().diff(quitDate, 'days') * 18 * (34 / 20))
-    document.getElementById('sub-title').innerText = `which also makes me ${nis} richer`
+  const {
+    quitAt = '2018-04-13T11:00:00.000Z',
+    cigPerDay = 18,
+    packPrice = 34,
+    cigPerPack = 20,
+    currency = '₪',
+  } = getOptions();
+  const quitDate = new Date(quitAt);
+  console.log('🚀 ~ file: main.js ~ line 11 ~ load ~ const', quitAt);
+  const years = moment().diff(quitDate, 'years');
+  const months = moment().diff(quitDate, 'months') - (years * 12);
+  document.getElementById('title').innerText = `smoke free for ${years} years and ${months} months`;
+  const nis = parseInt(moment().diff(quitDate, 'days') * cigPerDay * (packPrice / cigPerPack));
+  document.getElementById('sub-title').innerText = `which also makes me ${nis.toLocaleString()} ${currency} richer`;
 }
 
-document.addEventListener("DOMContentLoaded", load);
+function getOptions() {
+  const url = new URL(window.location.href);
+  const quitAt = url.searchParams.get('quitAt') || undefined;
+  const cigPerDay = url.searchParams.get('cigPerday') || undefined;
+  const packPrice = url.searchParams.get('packPrice') || undefined;
+  const cigPerPack = url.searchParams.get('cigPerPack') || undefined;
+  const currency = url.searchParams.get('currency') || undefined;
+  return {quitAt, cigPerDay, packPrice, cigPerPack, currency};
+}
+
+document.addEventListener('DOMContentLoaded', load);
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('./sw.js');
+}
+
 },{"moment":2}],2:[function(require,module,exports){
 //! moment.js
 //! version : 2.29.1

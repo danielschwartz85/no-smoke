@@ -1,0 +1,15 @@
+{
+	"name": "NoSomke",
+	"short_name": "NoSomke",
+	"start_url": "/",
+	"background_color": "cadetblue",
+	"theme_color": "cadetblue",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "cloud.ico?v=efeb35579bd47afa301af76c6b392a12",
+			"sizes": "128x128",
+			"type": "image/ico"
+		}
+	]
+}
